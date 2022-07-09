@@ -1,0 +1,8 @@
+
+Searlization
+===============
+converting pojo to json/XML/HTML
+
+Desearlization
+================
+converting json/XML/HTML to pojo
