@@ -54,19 +54,19 @@ public class restpostdemo {
 		
 		baseURI="https://reqres.in/";
 		
-//		given().
-//		header("Content-Type", "json/application").
-//		contentType(ContentType.JSON).
-//		accept(ContentType.JSON).
-//		body(obj.toJSONString()).
-////		//body(data).
-////		body(json).
-//	//	body(new File("src\\test\\java\\tests\\jsonfolder\\payload.json")).
-//		when().
-//		post("api/users").
-//		then().
-//		statusCode(201).
-//		log().all();
+		given().
+		header("Content-Type", "json/application").
+		contentType(ContentType.JSON).
+		accept(ContentType.JSON).
+		body(obj.toJSONString()).
+//		//body(data).
+//		body(json).
+	//	body(new File("src\\test\\java\\tests\\jsonfolder\\payload.json")).
+		when().
+		post("api/users").
+		then().
+		statusCode(201).
+		log().all();
 		
 	}
 

@@ -12,7 +12,7 @@
 <dependency>
     <groupId>io.rest-assured</groupId>
     <artifactId>rest-assured</artifactId>
-    <version>5.0.1</version>
+    <version>5.5.2</version>
     <scope>test</scope>
 </dependency>
   
@@ -34,7 +34,7 @@
 <dependency>
     <groupId>io.rest-assured</groupId>
     <artifactId>json-schema-validator</artifactId>
-    <version>5.0.1</version>
+    <version>5.5.2</version>
     <scope>test</scope>
 </dependency>
 
@@ -70,7 +70,12 @@
     <version>5.13.0-M3</version>
     <scope>test</scope>
 </dependency>
-
+<dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-path</artifactId>
+      <version>5.5.2</version>
+      <scope>test</scope>
+</dependency>
   
   </dependencies>
 </project>
