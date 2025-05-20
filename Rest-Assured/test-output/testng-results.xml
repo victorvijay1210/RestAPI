@@ -2,25 +2,29 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-16T08:09:43 IST" name="Default suite" finished-at="2025-05-16T08:09:45 IST" duration-ms="1369">
+  <suite started-at="2025-05-20T15:53:15 IST" name="Default suite" finished-at="2025-05-20T15:53:20 IST" duration-ms="4393">
     <groups>
     </groups>
-    <test started-at="2025-05-16T08:09:43 IST" name="Default test" finished-at="2025-05-16T08:09:45 IST" duration-ms="1369">
+    <test started-at="2025-05-20T15:53:15 IST" name="Default test" finished-at="2025-05-20T15:53:20 IST" duration-ms="4393">
       <class name="ConduitAPI.CreateArticleTest">
-        <test-method signature="createArticle()[pri:0, instance:ConduitAPI.CreateArticleTest@78aab498]" started-at="2025-05-16T08:09:43 IST" name="createArticle" finished-at="2025-05-16T08:09:45 IST" duration-ms="1351" status="FAIL">
+        <test-method is-config="true" signature="loginConduit()[pri:0, instance:ConduitAPI.CreateArticleTest@4218d6a3]" started-at="2025-05-20T15:53:15 IST" name="loginConduit" finished-at="2025-05-20T15:53:19 IST" duration-ms="3544" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginConduit -->
+        <test-method signature="createArticle()[pri:0, instance:ConduitAPI.CreateArticleTest@4218d6a3]" started-at="2025-05-20T15:53:19 IST" name="createArticle" finished-at="2025-05-20T15:53:20 IST" duration-ms="817" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
-Expected status code <201> but was <404>.
+Expected status code <201> but was <422>.
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 1 expectation failed.
-Expected status code <201> but was <404>.
+Expected status code <201> but was <422>.
 
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
 at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
 at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
 at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
@@ -48,7 +52,7 @@ at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCal
 at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
 at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
 at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-at ConduitAPI.CreateArticleTest.createArticle(CreateArticleTest.java:43)
+at ConduitAPI.CreateArticleTest.createArticle(CreateArticleTest.java:69)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
@@ -59,7 +63,7 @@ at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInv
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 at org.testng.TestRunner.privateRun(TestRunner.java:808)
 at org.testng.TestRunner.run(TestRunner.java:603)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)

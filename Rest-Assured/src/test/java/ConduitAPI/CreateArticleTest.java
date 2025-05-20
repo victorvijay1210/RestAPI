@@ -11,17 +11,43 @@ import io.restassured.matcher.RestAssuredMatchers;
 import io.restassured.response.Response;
 
 import org.hamcrest.Matchers;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class CreateArticleTest {
 
+	private  String token;
+	@BeforeTest
+	public void loginConduit() {
+        RestAssured.baseURI = "https://conduit-api.bondaracademy.com/api";
+	      RestAssured.useRelaxedHTTPSValidation();
+	      User login = new User("vijayvj1210@gmail.com", "Qwert$123");
+	      LoginPayoad user = new LoginPayoad(login);
+		// Deserialize the response
+	        Response response = given()
+	                .header("Content-Type", "application/json")
+	                .body(user)
+                    .log().body()              
+	            .when()
+	                .post("/users/login")
+	            .then()
+                .log().body()              // log the incoming JSON
+                .extract().response();  
+	     // 4) Print status and full body so you can see exactly what came back
+	        System.out.println("Status code: " + response.getStatusCode());
+	        System.out.println("Response body:" + response.asPrettyString());
+
+	        // 5) Now extract the token
+	        token = response.jsonPath().getString("user.token");
+
+		 
+	}
 	
 	@Test
 	public void createArticle() {
-		 baseURI="https://conduit-api.bondaracademy.com/api/articles";
-	     String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMzc1M30sImlhdCI6MTc0NzM2MzA5OCwiZXhwIjoxNzUyNTQ3MDk4fQ.yr2rRtk0d5BMPS6zHQCVp_2f5kRmaIOD5VWsUJigHJU";
-
-
+		 baseURI="https://conduit-api.bondaracademy.com/api";
+		 RestAssured.useRelaxedHTTPSValidation();
 	        // Create inner Article object
 	        Article article = new Article(
 	            "Test Articale",
@@ -34,7 +60,7 @@ public class CreateArticleTest {
 	        ArticleRequest articleRequest = new ArticleRequest(article);  	
 	        // Send POST request
 	        Response response = given()
-	        		.header("Authorization",token)
+	        		.header("Authorization","Token"+" "+token)
 	                                .header("Content-Type", "application/json")
 	                                .body(articleRequest)
 	                            .when()

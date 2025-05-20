@@ -5,6 +5,7 @@
     <classes>
       <class name="ConduitAPI.CreateArticleTest">
         <methods>
+          <include name="loginConduit"/>
           <include name="createArticle"/>
         </methods>
       </class> <!-- ConduitAPI.CreateArticleTest -->
